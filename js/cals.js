@@ -1,25 +1,24 @@
-var button = document.querySelectorAll(".calculateButton");
-// console.log(button);
-// var price = document.querySelectorAll(".price");
-// console.log(price);
-// var qty = document.querySelectorAll(".qty");
-// console.log(qty);
+var cal=document.querySelectorAll(".calculates");
+console.log(cal);
+var unitPrice=document.querySelectorAll(".unit");
+console.log(unitPrice);
+var input=document.querySelectorAll(".input");
+console.log(input);
 
-// let a = this;
-// console.log(a);
+function calculate(){
+    var x=this.parentNode.previousElementSibling.previousElementSibling.innerText
+    var y=this.parentNode.previousElementSibling.firstChild.value
+    var z=x*y; 
+    this.parentNode.nextElementSibling.innerText=z;
 
-
-
-function calculate() {
-    var qty = parseInt(this.parentNode.previousElementSibling.firstChild.value);
-    var price = parseInt(this.parentNode.previousElementSibling.previousElementSibling.firstChild.value);
-    var Totalprice = qty * price;
-    console.log(Totalprice);
-    this.parentNode.nextElementSibling.firstChild.innerText = Totalprice;
+    console.log(x);
+    console.log(y);
+    console.log(z);
+    
 }
 
-function actionevent(btn) {
-    btn.addEventListener("click", calculate);
+function addEvent(cal) {
+    cal.addEventListener("click",calculate);
+    
 }
-
-button.forEach(actionevent)
+cal.forEach(addEvent)
