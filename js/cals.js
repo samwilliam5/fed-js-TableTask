@@ -1,15 +1,25 @@
-let button = document.querySelectorAll(".calculateButton")
+var button = document.querySelectorAll(".calculateButton");
+// console.log(button);
+// var price = document.querySelectorAll(".price");
+// console.log(price);
+// var qty = document.querySelectorAll(".qty");
+// console.log(qty);
+
+// let a = this;
+// console.log(a);
+
+
 
 function calculate() {
-    let qty = parseInt(this.parentNode.previousElementSibling.firstChild.value);
-    let price = parseInt(this.parentNode.previousElementSibling.previousElementSibling.firstChild.value);
-    let Totalprice = qty * price;
+    var qty = parseInt(this.parentNode.previousElementSibling.firstChild.value);
+    var price = parseInt(this.parentNode.previousElementSibling.previousElementSibling.firstChild.value);
+    var Totalprice = qty * price;
     console.log(Totalprice);
     this.parentNode.nextElementSibling.firstChild.innerText = Totalprice;
 }
 
-function addEvent(btn) {
-    btn.addEventListener("click", calculate)
+function actionevent(btn) {
+    btn.addEventListener("click", calculate);
 }
 
-button.forEach(addEvent)
+button.forEach(actionevent)
